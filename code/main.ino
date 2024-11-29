@@ -18,6 +18,7 @@ Servo servo3;
 // Define threshold for flex sensor activation (sensor value threshold)
 const int flexThreshold2 = 10;
 const int flexThreshold1 = 300;
+const int flexThreshold3 = 200;
 void setup() {
   // Start serial communication for debugging
   Serial.begin(9600);
@@ -64,7 +65,7 @@ void loop() {
   }
 
   // Case 3: Flex Sensor 3 controls Servo 3 LOW
-  if (flexValue3 > flexThreshold1) {
+  if (flexValue3 > flexThreshold3) {
     // Move Servo 3 to 90 degrees if flex sensor value exceeds threshold
     servo3.write(90);
   } else {
